@@ -7,8 +7,9 @@ from ..wmiquery import wmiconn, wmiquery, wmiclose
 TYPE_NAME = "guests"
 QUERY = Query("""
     SELECT
-    Caption, Name, Status
+    Name, Status
     FROM Msvm_ComputerSystem
+    WHERE Caption = 'Virtual Machine'
 """, namespace=r'root\virtualization\v2')
 
 
