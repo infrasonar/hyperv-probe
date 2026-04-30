@@ -1,4 +1,4 @@
-from typing import Callable, List
+from typing import Callable
 
 
 def get_item(row: dict, name: str = 'Name') -> dict:
@@ -10,7 +10,7 @@ def get_item(row: dict, name: str = 'Name') -> dict:
 
 def get_state(
         type_name: str,
-        rows: List[dict],
+        rows: list[dict],
         on_item: Callable[[dict], dict] = get_item) -> dict:
     """Default get_state function."""
     return {type_name: [on_item(itm) for itm in rows]}
